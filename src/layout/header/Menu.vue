@@ -24,7 +24,7 @@
       
 
     <img src="media/logos/logo_minAmbiente.png" class="img-rounded" alt="Cinque Terre"/>
-      <h1 >HELLO WORLD</h1>
+    <img src="media/logos/logo_igp.png" class="img-rounded" alt="Cinque Terre"/>
     </div>
  
   <!--end::Menu wrapper-->
