@@ -23,8 +23,9 @@
     >
       
 
-    <img src="media/logos/logo_minAmbiente.png" class="img-rounded" alt="Cinque Terre"/>
-    <img src="media/logos/logo_igp.png" class="img-rounded" alt="Cinque Terre"/>
+    <img id="minam" src="media/logos/logo_minAmbiente.png" class="img-rounded" alt="Cinque Terre"/>
+    <img id="igplog" src="media/logos/logo_igp.png" class="img-rounded" alt="Cinque Terre"/>
+    <div class="vr vr-blurry"></div>
     </div>
  
   <!--end::Menu wrapper-->
@@ -35,10 +36,20 @@
 
 </script>
 <style>
-.img-rounded{
-  margin-top: 5px;
-  width: 200px;
-  height: 50px;
+#minam{
+  margin-top: 10px;
+  width: 190px;
+  height: 45px;
+}
+#igplog{
+  margin-top: 10px;
+  width: 150px;
+  height: 45px;
+  margin-left: 15px;
+}
+.vr{
+  height: 245px;
+  margin-left: 15px;
 }
 
 </style>
