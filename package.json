@@ -61,6 +61,7 @@
     "yup": "^0.32.8"
   },
   "devDependencies": {
+    "@types/prismjs": "^1.16.2",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -78,7 +79,6 @@
     "sass": "1.32.1",
     "sass-loader": "^8.0.2",
     "typescript": "~4.1.5",
-    "@types/prismjs": "^1.16.2",
     "vuex-module-decorators": "^1.0.1",
     "webpack-cli": "^4.7.2"
   }
