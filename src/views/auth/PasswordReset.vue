@@ -11,12 +11,12 @@
       <!--begin::Heading-->
       <div class="text-center mb-10">
         <!--begin::Title-->
-        <h1 class="text-dark mb-3">Forgot Password ?</h1>
+        <h1 class="text-dark mb-3">¿Olvidaste tu contraseña?</h1>
         <!--end::Title-->
 
         <!--begin::Link-->
         <div class="text-gray-400 fw-bold fs-4">
-          Enter your email to reset your password.
+          Ingrese su correo para resetear su contraseña.
         </div>
         <!--end::Link-->
       </div>
@@ -24,7 +24,7 @@
 
       <!--begin::Input group-->
       <div class="fv-row mb-10">
-        <label class="form-label fw-bolder text-gray-900 fs-6">Email</label>
+        <label class="form-label fw-bolder text-gray-900 fs-6">Correo</label>
         <Field
           class="form-control form-control-solid"
           type="email"
@@ -48,9 +48,9 @@
           id="kt_password_reset_submit"
           class="btn btn-lg btn-primary fw-bolder me-4"
         >
-          <span class="indicator-label"> Submit </span>
+          <span class="indicator-label"> Enviar </span>
           <span class="indicator-progress">
-            Please wait...
+            Por favor espere...
             <span
               class="spinner-border spinner-border-sm align-middle ms-2"
             ></span>
@@ -58,9 +58,9 @@
         </button>
 
         <router-link
-          to="/sign-up"
+          to="/sign-in"
           class="btn btn-lg btn-light-primary fw-bolder"
-          >Cancel</router-link
+          >Cancelar</router-link
         >
       </div>
       <!--end::Actions-->
@@ -94,7 +94,7 @@ export default defineComponent({
 
     //Create form validation object
     const forgotPassword = Yup.object().shape({
-      email: Yup.string().email().required().label("Email"),
+      email: Yup.string().email("Ingrese un correo valido.").required("Es necesario llenar esta casilla.").label("Email"),
     });
 
     //Form submit function

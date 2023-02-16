@@ -1,5 +1,5 @@
 <template>
-  <!--begin::Toolbar-->
+  <!--begin::Toolbar ESTO EDITAR MAÑANA -->
   <div class="toolbar" id="kt_toolbar">
     <!--begin::Container-->
     <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">

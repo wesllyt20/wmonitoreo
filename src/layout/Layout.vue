@@ -1,7 +1,7 @@
 <template>
   <KTLoader v-if="loaderEnabled" :logo="loaderLogo"></KTLoader>
 
-  <!-- begin:: Body -->
+  <!-- begin:: Body MAÑANAAAAAAA ES XD-->
   <div class="page d-flex flex-row flex-column-fluid">
     <!-- begin:: Aside Left -->
     <KTAside
@@ -48,7 +48,6 @@
   </div>
   <!-- end:: Body -->
   <KTScrollTop></KTScrollTop>
-  <KTExplore></KTExplore>
   <KTDrawerMessenger></KTDrawerMessenger>
   <KTUserMenu></KTUserMenu>
   <KTCreateApp></KTCreateApp>
@@ -68,7 +67,6 @@ import KTScrollTop from "@/layout/extras/ScrollTop.vue";
 import KTUserMenu from "@/layout/header/partials/ActivityDrawer.vue";
 import KTLoader from "@/components/Loader.vue";
 import KTCreateApp from "@/components/modals/wizards/CreateAppModal.vue";
-import KTExplore from "@/layout/extras/Explore.vue";
 import KTDrawerMessenger from "@/layout/extras/DrawerMessenger.vue";
 import { Actions } from "@/store/enums/StoreEnums";
 import {
@@ -98,7 +96,6 @@ export default defineComponent({
     KTScrollTop,
     KTCreateApp,
     KTUserMenu,
-    KTExplore,
     KTDrawerMessenger,
     KTLoader,
     KTMobilePageTitle,

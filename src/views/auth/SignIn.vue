@@ -8,7 +8,12 @@
       @submit="onSubmitLogin"
       :validation-schema="login"
     >
-    
+    <div class="mb-10 bg-light-info p-8 rounded">
+        <div class="text-info">
+          Use account <strong>admin@demo.com</strong> and password
+          <strong>demo</strong> to continue.
+        </div>
+      </div>
 
       
 
@@ -80,7 +85,7 @@
           <span class="indicator-label"> Ingresar </span>
 
           <span class="indicator-progress">
-            Por favor espere...!
+            Por favor espere...
             <span
               class="spinner-border spinner-border-sm align-middle ms-2"
             ></span>
@@ -119,8 +124,8 @@ export default defineComponent({
 
     //Create form validation object
     const login = Yup.object().shape({
-      email: Yup.string().email().required().label("Email"),
-      password: Yup.string().min(4).required().label("Password"),
+      email: Yup.string().email("Ingrese un correo valido.").required("Es necesario llenar esta casilla.").label("Email"),
+      password: Yup.string().min(4,"La contraseña debe tener al menos 8 caracteres.").required("Es necesario llenar esta casilla.").label("Password"),
     });
 
     //Form submit function
@@ -140,10 +145,10 @@ export default defineComponent({
           .dispatch(Actions.LOGIN, values)
           .then(() => {
             Swal.fire({
-              text: "All is cool! Now you submit this form",
+              text: "¡Datos correctos, puede ingresar!",
               icon: "success",
               buttonsStyling: false,
-              confirmButtonText: "Ok, got it!",
+              confirmButtonText: "Ingresar",
               customClass: {
                 confirmButton: "btn fw-bold btn-light-primary",
               },
@@ -154,10 +159,10 @@ export default defineComponent({
           })
           .catch(() => {
             Swal.fire({
-              text: store.getters.getErrors[0],
+              text: "¡Datos incorrectos!",
               icon: "error",
               buttonsStyling: false,
-              confirmButtonText: "Try again!",
+              confirmButtonText: "Volver a intentar",
               customClass: {
                 confirmButton: "btn fw-bold btn-light-danger",
               },

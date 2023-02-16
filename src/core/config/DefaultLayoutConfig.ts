@@ -8,12 +8,12 @@ const config: LayoutConfigTypes = {
     type: "default",
     primaryColor: "#009EF7",
     logo: {
-      dark: "media/logos/logo-1-dark.svg",
-      light: "media/logos/logo-1.svg",
+      dark: "media/logos/logo_igp.png",
+      light: "media/logos/logo_igp.png",
     },
   },
   loader: {
-    logo: "media/logos/igpLogo_dark.png",
+    logo: "media/logos/logo_igp.png",
     display: true,
     type: "spinner-logo",
   },
