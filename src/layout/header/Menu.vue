@@ -33,14 +33,41 @@
       />
     </a>
     <div id="dividermenu" class="border border-vertical"></div>
-    <a id="texto-desaparece">Monitoreo Operacional</a>
+    <a id="texto-desaparece"
+      >{{ translate("operMon") }}</a
+    >
     <div class="vr vr-blurry"></div>
   </div>
 
   <!--end::Menu wrapper-->
 </template>
 
-<script></script>
+<script lang="ts">
+
+import { useI18n } from "vue-i18n";
+
+
+export default ({
+  name: "menu",
+  components: {},
+  setup() {
+    const { t, te } = useI18n();
+
+      const translate = (text) => {
+      if (te(text)) {
+        return t(text);
+      } else {
+        return text;
+      }
+    };
+
+
+    return {
+      translate
+    };
+  },
+});
+</script>
 <style>
 #dividermenu {
   height: 70%;

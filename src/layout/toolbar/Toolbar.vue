@@ -16,9 +16,15 @@
         "
       >
         <!--begin::Title-->
-        <h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">
-          {{ title }}
-        </h1>
+
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-outline-secondary" :class="{ active: activeTab === 'tablero' }" @click="setActiveTab('tablero')">Tablero</button>
+    <button type="button" class="btn btn-outline-secondary" :class="{ active: activeTab === 'gestion' }" @click="setActiveTab('gestion')">Gestión</button>
+    <button type="button" class="btn btn-outline-secondary" :class="{ active: activeTab === 'registros' }" @click="setActiveTab('registros')">Registros</button>
+  </div>
+
+
         <!--end::Title-->
 
         <span
@@ -102,6 +108,16 @@ import { defineComponent } from "vue";
 import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
 
 export default defineComponent({
+  data() {
+    return {
+      activeTab: 'tablero'
+    }
+  },
+  methods: {
+    setActiveTab(tab) {
+      this.activeTab = tab
+    }
+  },
   name: "KToolbar",
   props: {
     breadcrumbs: Array,
@@ -112,3 +128,16 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.btn-outline-secondary {
+  color: #434349;
+  background-color: #ffffff;
+  border-color: #b5b5c3;
+}
+
+.btn-outline-secondary.active {
+  color: #0000af;
+  background-color: #b5b5c3;
+  border-color: #b5b5c3;
+}
+</style>

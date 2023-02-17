@@ -92,7 +92,9 @@ const messages = {
     news:"News",
     physical:"Physicals",
     admInci:"Adm incidents",
-    state:"State"
+    state:"State",
+    operMon:"Operational Monitoring",
+    admin:"Administration"
 
 
 
@@ -192,8 +194,9 @@ const messages = {
     news:"Nuevos",
     physical:"Físicos",
     admInci:"Administrar incidentes",
-    state:"Estado"
-    
+    state:"Estado",
+    operMon:"Monitoreo Operacional",
+    admin:"Administración"
 
   },
   // Cambiar nombres de pestañas setCurrentPageBreadcrumbs
