@@ -57,7 +57,7 @@ const messages = {
     createAccount: "Create Account",
     // NEWS HERE ---->
     activity: "Activity",
-    report: "report",
+    report: "Report",
     tracing:"Tracing",
     autoProgram: "Schedule activity",
     Notify: "Notify",
@@ -94,7 +94,11 @@ const messages = {
     admInci:"Adm incidents",
     state:"State",
     operMon:"Operational Monitoring",
-    admin:"Administration"
+    admin:"Administration",
+    users:"Users",
+    servicesIgp:"IGP Services",
+    estates:"States",
+    records:"Records"
 
 
 
@@ -138,7 +142,7 @@ const messages = {
     widgetsMixed: "Mezclada",
     widgetsTables: "Mesas",
     widgetsFeeds: "Alimenta",
-    changelog: "Registro de cambios",
+    changelog: "Version",
     docsAndComponents: "Documentos & Componentes",
     megaMenu: "Mega menú",
     exampleLink: "Enlace de ejemplo",
@@ -196,7 +200,11 @@ const messages = {
     admInci:"Administrar incidentes",
     state:"Estado",
     operMon:"Monitoreo Operacional",
-    admin:"Administración"
+    admin:"Administración",
+    users:"Usuarios",
+    servicesIgp:"Servicios IGP",
+    estates:"Bienes",
+    records:"Registros"
 
   },
   // Cambiar nombres de pestañas setCurrentPageBreadcrumbs

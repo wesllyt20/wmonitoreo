@@ -1,43 +1,26 @@
 <template>
   <!--begin::Mixed Widget 1-->
-  <div class="card card-xxl-stretch">
+  <div id="bgwidg2" class="card card-xxl-stretch">
     <!--begin::Header-->
-    <div :class="`bg-${widgetColor}`" class="card-header border-0 py-5">
+    <div id="bgwin2card1" class="card-header border-0 py-5">
       <h3 class="card-title fw-bolder text-white">Sales Statistics</h3>
-      <div class="card-toolbar">
-        <!--begin::Menu-->
-        <button
-          type="button"
-          :class="`btn-active-color-${widgetColor}`"
-          class="
-            btn btn-sm btn-icon btn-color-white btn-active-white
-            border-0
-            me-n3
-          "
-          data-kt-menu-trigger="click"
-          data-kt-menu-placement="bottom-end"
-          data-kt-menu-flip="top-end"
-        >
-          <span class="svg-icon svg-icon-2">
-            <inline-svg src="media/icons/duotune/general/gen024.svg" />
-          </span>
-        </button>
-        <Dropdown3></Dropdown3>
-        <!--end::Menu-->
-      </div>
+      <p>aeaaa</p>
     </div>
     <!--end::Header-->
     <!--begin::Body-->
     <div class="card-body p-0">
+      <div class="card-image">
+        <img
+        id="widget2"
+        src="media/bg/cerros.svg"
+        class="img-rounded"
+        alt="Cinque Terre"
+      />
+
+
+      </div>
       <!--begin::Chart-->
-      <apexchart
-        :class="`bg-${widgetColor}`"
-        class="mixed-widget-2-chart card-rounded-bottom"
-        :options="chartOptions"
-        :series="series"
-        height="200"
-        type="area"
-      ></apexchart>
+     
       <!--end::Chart-->
       <!--begin::Stats-->
       <div class="card-p mt-n20 position-relative">
@@ -83,15 +66,13 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
-import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
+
 import { MenuComponent } from "@/assets/ts/components/MenuComponent";
 import { getCSSVariableValue } from "@/assets/ts/_utils";
 
 export default defineComponent({
   name: "widget-1",
-  components: {
-    Dropdown3,
-  },
+  components: {},
   props: {
     widgetClasses: String,
     widgetColor: String,
@@ -225,7 +206,7 @@ export default defineComponent({
     const series = [
       {
         name: "Net Profit",
-        data: [30, 45, 32, 70, 40, 40, 40],
+        data: [30, 70, 30, 70, 30, 70, 40],
       },
     ];
 
@@ -239,4 +220,73 @@ export default defineComponent({
     };
   },
 });
+
+
+/* mañana 21 
+
+
+<template>
+  <div class="card-image">
+    <img id="widget2" src="media/bg/cerros.svg" class="img-rounded" alt="Cinque Terre" />
+    <div class="text-overlay">
+      <h2>Gestión</h2>
+      <p>Consolidado de archivos</p>
+    </div>
+  </div>
+</template>
+
+<style>
+  .card-image {
+    position: relative;
+    display: inline-block;
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    color: #ffffff;
+  }
+
+  .text-overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .text-overlay p {
+    font-size: 1.2rem;
+  }
+</style>
+
+
+*/
+
+
+
+
+
+
+
+
+
 </script>
+<style>
+#bgwidg2 {
+  background-color: #e2e4ec;
+}
+#bgwin2card1 {
+  background-color: #5e6278;
+}
+.card-image {
+    height:35%;
+    width: 100%;
+}
+
+.card-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+</style>
+

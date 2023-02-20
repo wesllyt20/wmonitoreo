@@ -186,21 +186,10 @@
       <div class="menu-item">
         <a
           class="menu-link"
-          href="https://preview.keenthemes.com/metronic8/vue/docs/#/changelog"
+          href="ingresartexto de actualizaciones"
         >
-          <span class="menu-icon">
-            <i
-              v-if="asideMenuIcons === 'font'"
-              class="bi bi-card-text fs-3"
-            ></i>
-            <span
-              v-else-if="asideMenuIcons === 'svg'"
-              class="svg-icon svg-icon-2"
-            >
-              <inline-svg src="media/icons/duotune/general/gen005.svg" />
-            </span>
-          </span>
-          <span class="menu-title"
+          
+          <span id="cambioslog" class="menu-title"
             >{{ translate("changelog") }} v{{ version }}</span
           >
         </a>
@@ -230,6 +219,16 @@
   flex: 0 0 100%;
   transition: none;
   outline: none !important;
+}
+#headingText {
+  color: #0000af;
+  font-size: 16px !important;
+}
+.rellenoMenu{
+  margin-left: 10px;
+}
+#cambioslog{
+  font-size: 10px;
 }
 </style>
 
@@ -281,12 +280,4 @@ export default defineComponent({
   },
 });
 </script>
-<style>
-#headingText {
-  color: #0000af;
-  font-size: 16px !important;
-}
-.rellenoMenu{
-  margin-left: 10px;
-}
-</style>
+

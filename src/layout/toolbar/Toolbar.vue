@@ -5,34 +5,46 @@
     <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
       <!--begin::Page title-->
       <div
-        class="
-          page-title
-          d-flex
-          align-items-center
-          me-3
-          flex-wrap
-          mb-5 mb-lg-0
-          lh-1
-        "
+        class="page-title d-flex align-items-center me-3 flex-wrap mb-5 mb-lg-0 lh-1"
       >
         <!--begin::Title-->
 
-
         <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-outline-secondary" :class="{ active: activeTab === 'tablero' }" @click="setActiveTab('tablero')">Tablero</button>
-    <button type="button" class="btn btn-outline-secondary" :class="{ active: activeTab === 'gestion' }" @click="setActiveTab('gestion')">Gestión</button>
-    <button type="button" class="btn btn-outline-secondary" :class="{ active: activeTab === 'registros' }" @click="setActiveTab('registros')">Registros</button>
-  </div>
+          <a
+            type="button"
+            href="#"
+            class="btn btn-outline-secondary"
+            :class="{ active: activeTab === 'tablero' }"
+            @click="setActiveTab('tablero')"
+          >
+          {{ translate("dashboard") }}
+          </a>
+          <a
+            type="button"
+            class="btn btn-outline-secondary"
+            :class="{ active: activeTab === 'gestion' }"
+            @click="setActiveTab('gestion')"
+          >
+          {{ translate("craft") }}
+          </a>
+          <a
+            type="button"
+            class="btn btn-outline-secondary"
+            :class="{ active: activeTab === 'registros' }"
+            @click="setActiveTab('registros')"
+          >
+          {{ translate("records") }}
+          </a>
+        </div>
 
-
-        <!--end::Title-->
+        <!--end::Title
 
         <span
           v-if="breadcrumbs"
           class="h-20px border-gray-200 border-start mx-4"
         ></span>
 
-        <!--begin::Breadcrumb-->
+   
         <ul
           v-if="breadcrumbs"
           class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1"
@@ -56,76 +68,47 @@
           <li class="breadcrumb-item pe-3 text-dark">
             {{ title }}
           </li>
-        </ul>
-        <!--end::Breadcrumb-->
+        </ul>-->
       </div>
-      <!--end::Page title-->
-
-      <!--begin::Actions-->
-      <div class="d-flex align-items-center py-1">
-        <!--begin::Wrapper-->
-        <div class="me-4">
-          <!--begin::Menu-->
-          <a
-            href="#"
-            class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
-            data-kt-menu-trigger="click"
-            data-kt-menu-placement="bottom-end"
-            data-kt-menu-flip="top-end"
-          >
-            <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-              <inline-svg src="media/icons/duotune/general/gen031.svg" />
-            </span>
-            Filter
-          </a>
-
-          <Dropdown1></Dropdown1>
-          <!--end::Menu-->
-        </div>
-        <!--end::Wrapper-->
-
-        <!--begin::Button-->
-        <a
-          href="#"
-          class="btn btn-sm btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#kt_modal_create_app"
-          id="kt_toolbar_primary_button"
-        >
-          Create
-        </a>
-        <!--end::Button-->
-      </div>
-      <!--end::Actions-->
     </div>
-    <!--end::Container-->
   </div>
-  <!--end::Toolbar-->
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
+import { useI18n } from "vue-i18n"; // ejemplo de translate
 
 export default defineComponent({
+  setup(){
+    const { t, te } = useI18n();
+  
+   const translate = (text) => {
+      if (te(text)) {
+        return t(text);
+      } else {
+        return text;
+      }
+    };
+    return {
+      translate
+	 }
+  },
   data() {
     return {
-      activeTab: 'tablero'
-    }
+      activeTab: "tablero",
+    };
   },
   methods: {
     setActiveTab(tab) {
-      this.activeTab = tab
-    }
+      this.activeTab = tab;
+    },
   },
   name: "KToolbar",
   props: {
     breadcrumbs: Array,
     title: String,
   },
-  components: {
-    Dropdown1,
-  },
+  components: {},
 });
 </script>
 <style>
@@ -133,11 +116,16 @@ export default defineComponent({
   color: #434349;
   background-color: #ffffff;
   border-color: #b5b5c3;
+  height: 25px;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-outline-secondary.active {
   color: #0000af;
-  background-color: #b5b5c3;
+  background-color: #ebebef;
   border-color: #b5b5c3;
 }
 </style>

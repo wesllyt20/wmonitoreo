@@ -3,9 +3,9 @@ const DocMenuConfig = [
     heading: "craft",
     pages: [
       {
-        sectionTitle: "pages",
+        sectionTitle: "tracing",
         route: "/pages",
-        svgIcon: "media/icons/duotune/general/gen022.svg",
+        svgIcon: "media/icons/duotune/general/ico_monitoreo.svg",
         fontIcon: "bi-archive",
         sub: [
           {
@@ -55,9 +55,9 @@ const DocMenuConfig = [
         ],
       },
       {
-        sectionTitle: "account",
+        sectionTitle: "report",
         route: "/account",
-        svgIcon: "media/icons/duotune/communication/com006.svg",
+        svgIcon: "media/icons/duotune/general/ico_reporte.svg",
         fontIcon: "bi-person",
         sub: [
           {
@@ -71,8 +71,8 @@ const DocMenuConfig = [
         ],
       },
       {
-        sectionTitle: "authentication",
-        svgIcon: "media/icons/duotune/technology/teh004.svg",
+        sectionTitle: "incident",
+        svgIcon: "media/icons/duotune/general/ico_incidentes.svg",
         fontIcon: "bi-sticky",
         sub: [
           {
@@ -103,9 +103,9 @@ const DocMenuConfig = [
         ],
       },
       {
-        sectionTitle: "modals",
+        sectionTitle: "Notify",
         route: "/modals",
-        svgIcon: "media/icons/duotune/art/art009.svg",
+        svgIcon: "media/icons/duotune/general/ico_notificaciones.svg",
         fontIcon: "bi-shield-check",
         sub: [
           {
@@ -173,9 +173,9 @@ const DocMenuConfig = [
         ],
       },
       {
-        sectionTitle: "widgets",
+        sectionTitle: "autoProgram",
         route: "/widgets",
-        svgIcon: "media/icons/duotune/general/gen025.svg",
+        svgIcon: "media/icons/duotune/general/ico_programar-actividades.svg",
         fontIcon: "bi-layers",
         sub: [
           {
@@ -211,27 +211,32 @@ const DocMenuConfig = [
     route: "/crafted",
     pages: [
       {
-        heading: "dashboard",
+        heading: "users",
         route: "/dashboard",
-        svgIcon: "media/icons/duotune/art/art002.svg",
+        svgIcon: "media/icons/duotune/general/ico_usuarios.svg",
         fontIcon: "bi-app-indicator",
       },
       {
-        heading: "layoutBuilder",
+        heading: "servicesIgp",
         route: "/builder",
-        svgIcon: "media/icons/duotune/general/gen019.svg",
+        svgIcon: "media/icons/duotune/general/ico_serviciosIGP.svg",
         fontIcon: "bi-layers",
-      },
+      }, {
+        heading: "estates",
+        route: "/builder",
+        svgIcon: "media/icons/duotune/general/ico_bienes.svg",
+        fontIcon: "bi-layers",
+      }
     ],
-  },
-  {
+  }
+  /*, {
     heading: "extra",
     route: "/apps",
     pages: [
       {
-        sectionTitle: "chat",
+        sectionTitle: "servicesIgp",
         route: "/chat",
-        svgIcon: "media/icons/duotune/communication/com012.svg",
+        svgIcon: "media/icons/duotune/general/ico_serviciosIGP.svg",
         fontIcon: "bi-chat-left",
         sub: [
           {
@@ -508,11 +513,11 @@ const DocMenuConfig = [
         ],
       },
     ],
-  },
+  } */
 ];
 
 export default DocMenuConfig;
 
 
 
-*/ 
+
