@@ -190,7 +190,7 @@
         >
           
           <span id="cambioslog" class="menu-title"
-            >{{ translate("changelog") }} v{{ version }}</span
+            >{{ translate("changelog") }} 1.0.0-alpha.1</span
           >
         </a>
       </div>
@@ -238,7 +238,6 @@ import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { ScrollComponent } from "@/assets/ts/components/_ScrollComponent";
 import { MenuComponent } from "@/assets/ts/components/MenuComponent";
-import { version } from "@/core/helpers/documentation";
 import { asideMenuIcons } from "@/core/helpers/config";
 import MainMenuConfig from "@/core/config/MainMenuConfig";
 
@@ -274,8 +273,7 @@ export default defineComponent({
       hasActiveChildren,
       MainMenuConfig,
       asideMenuIcons,
-      version,
-      translate,
+            translate,
     };
   },
 });

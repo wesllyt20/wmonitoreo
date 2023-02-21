@@ -81,7 +81,7 @@ export default ({
   margin-left: 20px;
   font-weight: 300;
 }
-@media screen and (max-width: 1380px) {
+@media screen and (max-width: 1080px) {
   #texto-desaparece {
     display: none;
   }

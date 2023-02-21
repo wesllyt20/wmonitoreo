@@ -9,6 +9,18 @@
         stroke-color="#cb1e46"
       ></MixedWidget2>
     </div>
+    <div class="col-xxl-8">
+      <TableWidget9
+        widget-classes="card-xxl-stretch mb-5 mb-xl-8"
+      ></TableWidget9>
+    </div>
+  </div>
+
+  <div class="row gy-5 gx-xl-8">
+    <div class="col-xxl-4">
+      <ListWidget3 widget-classes="card-xxl-stretch mb-xl-3"></ListWidget3>
+    </div>
+
     <div class="col-xxl-4">
       <ListWidget5
         widget-classes="card-xxl-stretch mb-5 mb-xl-10"
@@ -26,17 +38,11 @@
         chart-height="168"
       ></MixedWidget10>
     </div>
-  </div>
 
-  <div class="row gy-5 gx-xl-8">
-    <div class="col-xxl-4">
-      <ListWidget3 widget-classes="card-xxl-stretch mb-xl-3"></ListWidget3>
-    </div>
-    <div class="col-xxl-8">
-      <TableWidget9
-        widget-classes="card-xxl-stretch mb-5 mb-xl-8"
-      ></TableWidget9>
-    </div>
+   
+
+
+
   </div>
 
   <div class="row gy-5 g-xl-8">

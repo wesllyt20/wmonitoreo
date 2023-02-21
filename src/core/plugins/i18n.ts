@@ -98,8 +98,9 @@ const messages = {
     users:"Users",
     servicesIgp:"IGP Services",
     estates:"States",
-    records:"Records"
-
+    records:"Records",
+    fileCons: "File Consolidation",
+    updateon: "Update on "
 
 
 
@@ -204,10 +205,19 @@ const messages = {
     users:"Usuarios",
     servicesIgp:"Servicios IGP",
     estates:"Bienes",
-    records:"Registros"
+    records:"Registros",
+    fileCons: "Consolidado de archivos",
+    updateon: "Actualizado al "
+
+
+
+
+
 
   },
-  // Cambiar nombres de pestañas setCurrentPageBreadcrumbs
+  //↑↑↑↑↑
+  // FIN ESPAÑOL
+    // Cambiar nombres de pestañas setCurrentPageBreadcrumbs
   de: {
     dashboard: "Instrumententafel",
     craft: "Hergestellt",

@@ -4,9 +4,11 @@
     <!--begin::Header-->
     <div class="card-header border-0 pt-5">
       <h3 class="card-title align-items-start flex-column">
-        <span class="card-label fw-bolder fs-3 mb-1">Members Statistics</span>
+        <span class="card-label fw-bolder fs-3 mb-1">Ultimas incidencias</span>
 
-        <span class="text-muted mt-1 fw-bold fs-7">Over 500 members</span>
+        <span class="text-muted mt-1 fw-bold fs-7"
+          >Consolidado de incidencias recientes</span
+        >
       </h3>
 
       <div
@@ -14,7 +16,6 @@
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         data-bs-trigger="hover"
-        title="Click to add a user"
       >
         <a
           href="#"
@@ -25,7 +26,7 @@
           <span class="svg-icon svg-icon-3">
             <inline-svg src="media/icons/duotune/arrows/arr075.svg" />
           </span>
-          New Member
+          Nuevo
         </a>
       </div>
     </div>
@@ -37,29 +38,16 @@
       <div class="table-responsive">
         <!--begin::Table-->
         <table
-          class="
-            table table-row-dashed table-row-gray-300
-            align-middle
-            gs-0
-            gy-4
-          "
+          class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4"
         >
           <!--begin::Table head-->
           <thead>
             <tr class="fw-bolder text-muted">
-              <th class="w-25px">
-                <div
-                  class="
-                    form-check form-check-sm form-check-custom form-check-solid
-                  "
-                >
-                  <input class="form-check-input" type="checkbox" value="1" />
-                </div>
-              </th>
-              <th class="min-w-150px">Authors</th>
-              <th class="min-w-140px">Company</th>
-              <th class="min-w-120px">Progress</th>
-              <th class="min-w-100px text-end">Actions</th>
+              <th class="min-w-150px">Responsable</th>
+              <th class="min-w-140px">Fecha y hora</th>
+              <th class="min-w-120px">Critico</th>
+              <th class="min-w-120px">Estado</th>
+              <th class="min-w-100px text-end">Acciones</th>
             </tr>
           </thead>
           <!--end::Table head-->
@@ -68,23 +56,6 @@
           <tbody>
             <template v-for="(item, index) in list" :key="index">
               <tr>
-                <td>
-                  <div
-                    class="
-                      form-check
-                      form-check-sm
-                      form-check-custom
-                      form-check-solid
-                    "
-                  >
-                    <input
-                      class="form-check-input widget-9-check"
-                      type="checkbox"
-                      :value="index"
-                    />
-                  </div>
-                </td>
-
                 <td>
                   <div class="d-flex align-items-center">
                     <div class="symbol symbol-45px me-5">
@@ -116,6 +87,14 @@
                   }}</span>
                 </td>
 
+                <td
+                  :style="{
+                    color: item.critico === 'SI' ? 'red' : '#00A3FF',
+                    fontWeight: 'bold',
+                  }"
+                >
+                  {{ item.critico }}
+                </td>
                 <td class="text-end">
                   <div class="d-flex flex-column w-100 me-2">
                     <div class="d-flex flex-stack mb-2">
@@ -137,14 +116,10 @@
                     </div>
                   </div>
                 </td>
-
                 <td class="text-end">
                   <a
                     href="#"
-                    class="
-                      btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                      me-1
-                    "
+                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                   >
                     <span class="svg-icon svg-icon-3">
                       <inline-svg
@@ -155,10 +130,7 @@
 
                   <a
                     href="#"
-                    class="
-                      btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                      me-1
-                    "
+                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                   >
                     <span class="svg-icon svg-icon-3">
                       <inline-svg src="media/icons/duotune/art/art005.svg" />
@@ -167,9 +139,7 @@
 
                   <a
                     href="#"
-                    class="
-                      btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                    "
+                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
                   >
                     <span class="svg-icon svg-icon-3">
                       <inline-svg
@@ -213,6 +183,7 @@ export default defineComponent({
         companySkills: "Web, UI/UX Design",
         value: "50",
         color: "primary",
+        critico:"NO"
       },
       {
         image: "media/avatars/150-3.jpg",
@@ -222,6 +193,7 @@ export default defineComponent({
         companySkills: "Houses & Hotels",
         value: "70",
         color: "danger",
+        critico:"SI"
       },
       {
         image: "media/avatars/150-4.jpg",
@@ -231,6 +203,7 @@ export default defineComponent({
         companySkills: "Transportation",
         value: "60",
         color: "success",
+        critico:"SI"
       },
       {
         image: "media/avatars/150-5.jpg",
@@ -240,6 +213,7 @@ export default defineComponent({
         companySkills: "Insurance",
         value: "50",
         color: "warning",
+        critico:"NO"
       },
       {
         image: "media/avatars/150-6.jpg",
@@ -249,6 +223,7 @@ export default defineComponent({
         companySkills: "Art Director",
         value: "90",
         color: "info",
+        critico:"NO"
       },
     ];
 
