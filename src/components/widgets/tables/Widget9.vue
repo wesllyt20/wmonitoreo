@@ -46,8 +46,8 @@
               <th class="min-w-150px">Responsable</th>
               <th class="min-w-140px">Fecha y hora</th>
               <th class="min-w-120px">Critico</th>
-              <th class="min-w-120px">Estado</th>
-              <th class="min-w-100px text-end">Acciones</th>
+              <th class="min-w-120px text-center">Estado</th>
+              <th class="min-w-100px text-center">Acciones</th>
             </tr>
           </thead>
           <!--end::Table head-->
@@ -58,9 +58,6 @@
               <tr>
                 <td>
                   <div class="d-flex align-items-center">
-                    <div class="symbol symbol-45px me-5">
-                      <img :src="item.image" alt="" />
-                    </div>
                     <div class="d-flex justify-content-start flex-column">
                       <a
                         href="#"
@@ -80,10 +77,10 @@
                   <a
                     href="#"
                     class="text-dark fw-bolder text-hover-primary d-block fs-6"
-                    >{{ item.companyName }}</a
+                    >{{ item.date }}</a
                   >
                   <span class="text-muted fw-bold text-muted d-block fs-7">{{
-                    item.companySkills
+                    item.hour
                   }}</span>
                 </td>
 
@@ -95,39 +92,19 @@
                 >
                   {{ item.critico }}
                 </td>
-                <td class="text-end">
-                  <div class="d-flex flex-column w-100 me-2">
-                    <div class="d-flex flex-stack mb-2">
-                      <span class="text-muted me-2 fs-7 fw-bold">
-                        {{ item.value }}%
+                <td class="text-center">
+                  <div class="d-flex flex-column w-100 me-2 align-items-center text-nowrap">
+                    <div class="d-flex flex-stack mb-2 ">
+                      <span
+                        class="me-2 fs-7 fw-bold"
+                        v-bind:style="getStateStyle(item.state)"
+                      >
+                        {{ item.state }}
                       </span>
-                    </div>
-
-                    <div class="progress h-6px w-100">
-                      <div
-                        class="progress-bar"
-                        :class="`bg-${item.color}`"
-                        role="progressbar"
-                        :style="{ width: item.value + '%' }"
-                        :aria-valuenow="item.value"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
                     </div>
                   </div>
                 </td>
-                <td class="text-end">
-                  <a
-                    href="#"
-                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                  >
-                    <span class="svg-icon svg-icon-3">
-                      <inline-svg
-                        src="media/icons/duotune/general/gen019.svg"
-                      />
-                    </span>
-                  </a>
-
+                <td class="text-center">
                   <a
                     href="#"
                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
@@ -171,59 +148,100 @@ export default defineComponent({
   props: {
     widgetClasses: String,
   },
+  methods: {
+    getStateStyle(state) {
+      if (state === "Pendiente") {
+        return {
+          color: "#FF0000",
+          backgroundColor: "#FFDEDE",
+          borderRadius: "15px",
+          width: "90px",
+          height: "25px",
+          display: "inline-block",
+          alignItems: "center",
+          justifyContent: "center",
+        };
+      } else if (state === "En proceso") {
+        return {
+          color: "#C7880F",
+          backgroundColor: "#FBEBCD",
+          cursor: "default",
+          borderRadius: "15px",
+          width: "80px",
+          height: "20px",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          whiteSpace: "nowrap",
+        };
+      } else if (state === "Finalizado") {
+        return {
+          color: "#00AB44",
+          backgroundColor: "#BAFAD7",
+          borderRadius: "15px",
+          width: "80px",
+          height: "20px",
+          display: "inline-block",
+          alignItems: "center",
+          justifyContent: "center",
+        };
+      } else if (state === "Cancelado") {
+        return {
+          color: "#DADADA",
+          backgroundColor: "#464E5F",
+          borderRadius: "15px",
+          width: "80px",
+          height: "20px",
+          display: "inline-block",
+          alignItems: "center",
+          justifyContent: "center",
+        };
+      }
+    },
+  },
   setup() {
     const checked = ref(false);
 
     const list = [
       {
-        image: "media/avatars/150-11.jpg",
         name: "Ana Simmons",
-        skills: "HTML, JS, ReactJS",
-        companyName: "Intertico",
-        companySkills: "Web, UI/UX Design",
-        value: "50",
-        color: "primary",
-        critico:"NO"
+        skills: "CENSIS",
+        date: "20/02/23",
+        hour: "11:30:00",
+        state: "Pendiente",
+        critico: "NO",
       },
       {
-        image: "media/avatars/150-3.jpg",
         name: "Jessie Clarcson",
-        skills: "C#, ASP.NET, MS SQL",
-        companyName: "Agoda",
-        companySkills: "Houses & Hotels",
-        value: "70",
-        color: "danger",
-        critico:"SI"
+        skills: "REDES",
+        date: "19/02/23",
+        hour: "14:10:00",
+        state: "En proceso",
+        critico: "SI",
       },
       {
-        image: "media/avatars/150-4.jpg",
         name: "Lebron Wayde",
-        skills: "PHP, Laravel, VueJS",
-        companyName: "RoadGee",
-        companySkills: "Transportation",
-        value: "60",
-        color: "success",
-        critico:"SI"
+        skills: "OTIDG",
+        date: "15/02/23",
+        hour: "15:20:10",
+        state: "Finalizado",
+        critico: "SI",
       },
       {
-        image: "media/avatars/150-5.jpg",
         name: "Natali Goodwin",
-        skills: "Python, PostgreSQL, ReactJS",
-        companyName: "The Hill",
-        companySkills: "Insurance",
-        value: "50",
-        color: "warning",
-        critico:"NO"
+        skills: "Mayorazgo",
+        date: "15/02/23",
+        hour: "10:25:20",
+        state: "Cancelado",
+        critico: "NO",
       },
       {
-        image: "media/avatars/150-6.jpg",
         name: "Kevin Leonard",
-        skills: "HTML, JS, ReactJS",
-        companyName: "RoadGee",
-        companySkills: "Art Director",
-        value: "90",
-        color: "info",
-        critico:"NO"
+        skills: "CENVUL",
+        date: "11/02/23",
+        hour: "16:05:10",
+        state: "Finalizado",
+        critico: "NO",
       },
     ];
 
