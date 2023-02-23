@@ -47098,11 +47098,11 @@ label.rating-label:hover ~ .rating-label > .svg-icon svg:hover [fill]:not(.perma
 .timeline-label:before {
   content: "";
   position: absolute;
-  left: 51px;
+  left: 1px;
   width: 3px;
   top: 0;
   bottom: 0;
-  background-color: #EFF2F5;
+  background-color: #0000AF;
 }
 .timeline-label .timeline-item {
   display: flex;
