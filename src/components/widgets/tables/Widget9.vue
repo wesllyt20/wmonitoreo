@@ -4,25 +4,13 @@
     <!--begin::Header-->
     <div class="card-header border-0 pt-5">
       <h3 class="card-title align-items-start flex-column">
-        <span class="card-label fw-bolder fs-3 mb-1">Ultimas incidencias</span>
+        <span id="titabDash" class="card-label fw-bolder fs-3 mb-1">Ultimas incidencias</span>
 
-        <span class="text-muted mt-1 fw-bold fs-7"
-          >Consolidado de incidencias recientes</span
-        >
+        <span class="text-muted mt-1 fw-bold fs-7">Consolidado de incidencias recientes</span>
       </h3>
 
-      <div
-        class="card-toolbar"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        data-bs-trigger="hover"
-      >
-        <a
-          href="#"
-          class="btn btn-sm btn-light-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#kt_modal_invite_friends"
-        >
+      <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
+        <a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">
           <span class="svg-icon svg-icon-3">
             <inline-svg src="media/icons/duotune/arrows/arr075.svg" />
           </span>
@@ -37,12 +25,10 @@
       <!--begin::Table container-->
       <div class="table-responsive">
         <!--begin::Table-->
-        <table
-          class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4"
-        >
+        <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
           <!--begin::Table head-->
           <thead>
-            <tr class="fw-bolder text-muted">
+            <tr id="tabDash" class="fw-bolder text-muted">
               <th class="min-w-150px">Responsable</th>
               <th class="min-w-140px">Fecha y hora</th>
               <th class="min-w-120px">Critico</th>
@@ -59,84 +45,59 @@
                 <td>
                   <div class="d-flex align-items-center">
                     <div class="d-flex justify-content-start flex-column">
-                      <a
-                        href="#"
-                        class="text-dark fw-bolder text-hover-primary fs-6"
-                        >{{ item.name }}</a
-                      >
+                      <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">{{ item.name }}</a>
 
-                      <span
-                        class="text-muted fw-bold text-muted d-block fs-7"
-                        >{{ item.skills }}</span
-                      >
+                      <span class="text-muted fw-bold text-muted d-block fs-7">{{ item.skills }}</span>
                     </div>
                   </div>
                 </td>
 
                 <td>
-                  <a
-                    href="#"
-                    class="text-dark fw-bolder text-hover-primary d-block fs-6"
-                    >{{ item.date }}</a
-                  >
+                  <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">{{ item.date }}</a>
                   <span class="text-muted fw-bold text-muted d-block fs-7">{{
                     item.hour
                   }}</span>
                 </td>
 
-                <td
-                  :style="{
-                    color: item.critico === 'SI' ? 'red' : '#00A3FF',
-                    fontWeight: 'bold',
-                  }"
-                >
+                <td :style="{
+                  color: item.critico === 'SI' ? 'red' : '#00A3FF',
+                  fontWeight: 'bold',
+                }">
                   {{ item.critico }}
                 </td>
-                <td class="text-center">
+                <td class="text-center align-middle">
                   <div class="d-flex flex-column w-100 me-2 align-items-center text-nowrap">
                     <div class="d-flex flex-stack mb-2 ">
-                      <span
-                        class="me-2 fs-7 fw-bold"
-                        v-bind:style="getStateStyle(item.state)"
-                      >
+                      <span class="me-2 fs-7 fw-bold" v-bind:style="getStateStyle(item.state)">
                         {{ item.state }}
                       </span>
                     </div>
                   </div>
                 </td>
                 <td class="text-center">
-                  <a
-                    href="#"
-                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                  >
+                  <a href="#" class="btnw9 btn btn-icon btn-bg-light btn-sm me-1">
                     <span class="svg-icon svg-icon-3">
-                      <inline-svg src="media/icons/duotune/art/art005.svg" />
+                      <inline-svg class="imw9" src="media/icons/duotune/art/art005.svg" />
                     </span>
                   </a>
 
-                  <a
-                    href="#"
-                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
-                  >
+                  <a href="#" class="btnw9 btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                     <span class="svg-icon svg-icon-3">
-                      <inline-svg
-                        src="media/icons/duotune/general/gen027.svg"
-                      />
+                      <inline-svg class="imw9" src="media/icons/duotune/general/gen027.svg" />
                     </span>
                   </a>
                 </td>
               </tr>
             </template>
           </tbody>
-          <!--end::Table body-->
+
         </table>
-        <!--end::Table-->
+
       </div>
-      <!--end::Table container-->
+
     </div>
-    <!--begin::Body-->
+
   </div>
-  <!--end::Tables Widget 9-->
 </template>
 
 <script lang="ts">
@@ -160,41 +121,43 @@ export default defineComponent({
           display: "inline-block",
           alignItems: "center",
           justifyContent: "center",
+          lineHeight: "25px"
         };
       } else if (state === "En proceso") {
         return {
           color: "#C7880F",
           backgroundColor: "#FBEBCD",
-          cursor: "default",
           borderRadius: "15px",
-          width: "80px",
-          height: "20px",
-          display: "inline-flex",
+          width: "90px",
+          height: "25px",
+          display: "inline-block",
           alignItems: "center",
           justifyContent: "center",
-          whiteSpace: "nowrap",
+          lineHeight: "25px"
         };
       } else if (state === "Finalizado") {
         return {
           color: "#00AB44",
           backgroundColor: "#BAFAD7",
           borderRadius: "15px",
-          width: "80px",
-          height: "20px",
+          width: "90px",
+          height: "25px",
           display: "inline-block",
           alignItems: "center",
           justifyContent: "center",
+          lineHeight: "25px"
         };
       } else if (state === "Cancelado") {
         return {
           color: "#DADADA",
           backgroundColor: "#464E5F",
           borderRadius: "15px",
-          width: "80px",
-          height: "20px",
+          width: "90px",
+          height: "25px",
           display: "inline-block",
           alignItems: "center",
           justifyContent: "center",
+          lineHeight: "25px"
         };
       }
     },
@@ -252,3 +215,22 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+#tabDash,
+#titabDash {
+  color: #0000AF !important;
+}
+.imw9{
+  filter: invert(80%) sepia(39%) saturate(1000%) hue-rotate(186deg) brightness(101%) contrast(101%)
+}
+
+.btnw9:hover {
+  background-color: #b5b5c3;
+  color: #0000AF;
+}
+
+.btnw9:active {
+  background-color: #0000FF;
+  color: #FFFFFF;
+}
+</style>

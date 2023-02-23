@@ -3,27 +3,7 @@
   <div class="card" :class="widgetClasses">
     <!--begin::Header-->
     <div class="card-header border-0 pt-5">
-      <h3 class="card-title align-items-start flex-column">
-        <span class="card-label fw-bolder text-dark">Tasks Overview</span>
-        <span class="text-muted mt-1 fw-bold fs-7">Pending 10 tasks</span>
-      </h3>
-
-      <div class="card-toolbar">
-        <!--begin::Menu-->
-        <button
-          type="button"
-          class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-          data-kt-menu-trigger="click"
-          data-kt-menu-placement="bottom-end"
-          data-kt-menu-flip="top-end"
-        >
-          <span class="svg-icon svg-icon-2">
-            <inline-svg src="media/icons/duotune/general/gen024.svg" />
-          </span>
-        </button>
-        <Dropdown1></Dropdown1>
-        <!--end::Menu-->
-      </div>
+      <h1>Hello</h1>
     </div>
     <!--end::Header-->
 
@@ -68,12 +48,12 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
+
 
 export default defineComponent({
   name: "kt-widget-1",
   components: {
-    Dropdown1,
+    
   },
   props: {
     widgetClasses: String,
