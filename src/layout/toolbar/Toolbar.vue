@@ -21,6 +21,7 @@
           </a>
           <a
             type="button"
+            href="#/crafted/modals/general/invite-friends"
             class="btn btn-outline-secondary"
             :class="{ active: activeTab === 'gestion' }"
             @click="setActiveTab('gestion')"
@@ -29,6 +30,7 @@
           </a>
           <a
             type="button"
+            href="#/crafted/basicflow/sign-in"
             class="btn btn-outline-secondary"
             :class="{ active: activeTab === 'registros' }"
             @click="setActiveTab('registros')"

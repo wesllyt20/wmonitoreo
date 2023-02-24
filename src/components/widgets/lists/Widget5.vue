@@ -4,8 +4,8 @@
     <!--begin::Header-->
     <div class="card-header align-items-center border-0 mt-4">
       <h3 class="card-title align-items-start flex-column">
-        <span class="fw-bolder mb-2 text-dark">Panel eventos</span>
-        <span class="text-muted fw-bold fs-7"
+        <h2 id="tiw5" class="fw-bolder mb-2 text-dark">Panel eventos</h2>
+        <span  class="text-muted fw-bold fs-7"
           >Programa tus eventos en el calendario</span
         >
       </h3>
@@ -76,5 +76,8 @@ export default defineComponent({
   top: 0;
   bottom: 0;
   background-color: #00A3FF;
+}
+#tiw5{
+  color:#0000AF !important
 }
 </style>

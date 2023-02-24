@@ -44,7 +44,7 @@
     <!--begin::Menu item-->
     <div class="menu-item px-5">
       <router-link to="/pages/profile/overview" class="menu-link px-5">
-        My Profile
+        Mi perfil
       </router-link>
     </div>
     <!--end::Menu item-->
@@ -52,10 +52,10 @@
     <!--begin::Menu item-->
     <div class="menu-item px-5">
       <router-link to="/pages/profile/overview" class="menu-link px-5">
-        <span class="menu-text">My Projects</span>
+        <span class="menu-text">Incidencias</span>
         <span class="menu-badge">
           <span class="badge badge-light-danger badge-circle fw-bolder fs-7"
-            >3</span
+            >1</span
           >
         </span>
       </router-link>
@@ -70,7 +70,7 @@
       data-kt-menu-flip="center, top"
     >
       <router-link to="/pages/profile/overview" class="menu-link px-5">
-        <span class="menu-title">My Subscription</span>
+        <span class="menu-title">Opciones</span>
         <span class="menu-arrow"></span>
       </router-link>
 
@@ -149,7 +149,7 @@
     <!--begin::Menu item-->
     <div class="menu-item px-5">
       <router-link to="/pages/profile/overview" class="menu-link px-5">
-        My Statements
+        Notificaciones
       </router-link>
     </div>
     <!--end::Menu item-->
@@ -167,7 +167,7 @@
     >
       <router-link to="/pages/profile/overview" class="menu-link px-5">
         <span class="menu-title position-relative">
-          Language
+          Lenguaje
           <span
             class="
               fs-8
@@ -228,7 +228,7 @@
                 alt="metronic"
               />
             </span>
-            Spanish
+            Español
           </a>
         </div>
         <!--end::Menu item-->
@@ -300,14 +300,14 @@
     <!--begin::Menu item-->
     <div class="menu-item px-5 my-1">
       <router-link to="/pages/profile/overview" class="menu-link px-5">
-        Account Settings
+        Opciones de cuenta
       </router-link>
     </div>
     <!--end::Menu item-->
 
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-      <a @click="signOut()" class="menu-link px-5"> Sign Out </a>
+      <a @click="signOut()" class="menu-link px-5"> Salir </a>
     </div>
     <!--end::Menu item-->
   </div>

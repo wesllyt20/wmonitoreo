@@ -80,7 +80,7 @@ const DocMenuConfig = [
             sub: [
               {
                 heading: "signIn",
-                route: "/sign-in",
+                route: "/crafted/basicflow/sign-in",
               },
               {
                 heading: "signUp",

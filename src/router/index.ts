@@ -182,17 +182,18 @@ const routes: Array<RouteRecordRaw> = [
         name: "widgets-feeds",
         component: () => import("@/views/widgets/Feeds.vue"),
       },
+      {
+        path: "/crafted/basicflow/sign-in",
+        name: "sign-in",
+        component: () => import("@/views/auth/SignIn.vue"),
+      }
     ],
   },
   {
     path: "/",
     component: () => import("@/views/auth/Auth.vue"),
     children: [
-      {
-        path: "/sign-in",
-        name: "sign-in",
-        component: () => import("@/views/auth/SignIn.vue"),
-      },
+     
       {
         path: "/sign-up",
         name: "sign-up",
