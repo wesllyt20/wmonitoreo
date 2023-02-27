@@ -80,11 +80,11 @@ const DocMenuConfig = [
             sub: [
               {
                 heading: "signIn",
-                route: "/crafted/basicflow/sign-in",
+                route: "/sign-up",
               },
               {
                 heading: "signUp",
-                route: "/sign-up",
+                route: "/crafted/basicflow/sign-up",
               },
               {
                 heading: "passwordReset",
@@ -211,10 +211,19 @@ const DocMenuConfig = [
     route: "/crafted",
     pages: [
       {
-        heading: "users",
-        route: "/dashboard",
+        sectionTitle: "users",
         svgIcon: "media/icons/duotune/general/ico_usuarios.svg",
         fontIcon: "bi-app-indicator",
+        sub: [
+          {
+            heading: "signUp",
+            route: "/crafted/basicflow/sign-up",
+          },
+          {
+            heading: "settings",
+            route: "/crafted/account/settings",
+          },
+        ],
       },
       {
         heading: "servicesIgp",

@@ -183,21 +183,21 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/widgets/Feeds.vue"),
       },
       {
-        path: "/crafted/basicflow/sign-in",
-        name: "sign-in",
-        component: () => import("@/views/auth/SignIn.vue"),
+        path: "/crafted/basicflow/sign-up",
+        name: "sign-up",
+        component: () => import("@/views/auth/SignUp.vue"),
       }
+      
     ],
   },
   {
     path: "/",
     component: () => import("@/views/auth/Auth.vue"),
     children: [
-     
       {
-        path: "/sign-up",
-        name: "sign-up",
-        component: () => import("@/views/auth/SignUp.vue"),
+        path: "/sign-in",
+        name: "sign-in",
+        component: () => import("@/views/auth/SignIn.vue"),
       },
       {
         path: "/password-reset",

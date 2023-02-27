@@ -12,45 +12,24 @@
       <!--begin::Heading-->
       <div class="mb-10 text-center">
         <!--begin::Title-->
-        <h1 class="text-dark mb-3">Create an Account</h1>
+        <h1 class="text-dark mb-3">Crear cuenta</h1>
         <!--end::Title-->
-
-        <!--begin::Link-->
-        <div class="text-gray-400 fw-bold fs-4">
-          Already have an account?
-
-          <router-link to="/sign-in" class="link-primary fw-bolder">
-            Sign in here
-          </router-link>
-        </div>
-        <!--end::Link-->
       </div>
       <!--end::Heading-->
 
-      <!--begin::Action-->
-      <button type="button" class="btn btn-light-primary fw-bolder w-100 mb-10">
-        <img
-          alt="Logo"
-          src="media/svg/brand-logos/google-icon.svg"
-          class="h-20px me-3"
-        />
-        Sign in with Google
-      </button>
-      <!--end::Action-->
-
-      <!--begin::Separator-->
+      <!--begin::SEPARADOR EJEMPLO
       <div class="d-flex align-items-center mb-10">
         <div class="border-bottom border-gray-300 mw-50 w-100"></div>
         <span class="fw-bold text-gray-400 fs-7 mx-2">OR</span>
         <div class="border-bottom border-gray-300 mw-50 w-100"></div>
       </div>
-      <!--end::Separator-->
+      end::Separator-->
 
       <!--begin::Input group-->
       <div class="row fv-row mb-7">
         <!--begin::Col-->
-        <div class="col-xl-6">
-          <label class="form-label fw-bolder text-dark fs-6">First Name</label>
+        <div class="col-xl-4">
+          <label class="form-label fw-bolder text-dark fs-6">Nombres</label>
           <Field
             class="form-control form-control-lg form-control-solid"
             type="text"
@@ -67,8 +46,8 @@
         <!--end::Col-->
 
         <!--begin::Col-->
-        <div class="col-xl-6">
-          <label class="form-label fw-bolder text-dark fs-6">Last Name</label>
+        <div class="col-xl-4">
+          <label class="form-label fw-bolder text-dark fs-6">Apellidos</label>
           <Field
             class="form-control form-control-lg form-control-solid"
             type="text"
@@ -83,76 +62,129 @@
           </div>
         </div>
         <!--end::Col-->
-      </div>
-      <!--end::Input group-->
-
-      <!--begin::Input group-->
-      <div class="fv-row mb-7">
-        <label class="form-label fw-bolder text-dark fs-6">Email</label>
-        <Field
-          class="form-control form-control-lg form-control-solid"
-          type="email"
-          placeholder=""
-          name="email"
-          autocomplete="off"
-        />
-        <div class="fv-plugins-message-container">
-          <div class="fv-help-block">
-            <ErrorMessage name="email" />
-          </div>
-        </div>
-      </div>
-      <!--end::Input group-->
-
-      <!--begin::Input group-->
-      <div class="mb-10 fv-row" data-kt-password-meter="true">
-        <!--begin::Wrapper-->
-        <div class="mb-1">
-          <!--begin::Label-->
-          <label class="form-label fw-bolder text-dark fs-6"> Password </label>
-          <!--end::Label-->
-
-          <!--begin::Input wrapper-->
-          <div class="position-relative mb-3">
-            <Field
-              class="form-control form-control-lg form-control-solid"
-              type="password"
-              placeholder=""
-              name="password"
-              autocomplete="off"
-            />
-            <div class="fv-plugins-message-container">
-              <div class="fv-help-block">
-                <ErrorMessage name="password" />
-              </div>
+        <div class="col-xl-4">
+          <label class="form-label fw-bolder text-dark fs-6">Celular</label>
+          <Field
+            class="form-control form-control-lg form-control-solid"
+            type="tel"
+            placeholder=""
+            name="cell"
+            autocomplete="off"
+          />
+          <div class="fv-plugins-message-container">
+            <div class="fv-help-block">
+              <ErrorMessage name="cell" />
             </div>
           </div>
-          <!--end::Input wrapper-->
-        </div>
-        <!--end::Wrapper-->
-      </div>
-      <!--end::Input group--->
-
-      <!--begin::Input group-->
-      <div class="fv-row mb-5">
-        <label class="form-label fw-bolder text-dark fs-6"
-          >Confirm Password</label
-        >
-        <Field
-          class="form-control form-control-lg form-control-solid"
-          type="password"
-          placeholder=""
-          name="cpassword"
-          autocomplete="off"
-        />
-        <div class="fv-plugins-message-container">
-          <div class="fv-help-block">
-            <ErrorMessage name="cpassword" />
-          </div>
         </div>
       </div>
       <!--end::Input group-->
 
+      <div class="row fv-row mb-7">
+        <!--begin::Col-->
+        <div class="col-xl-4">
+          <label class="form-label fw-bolder text-dark fs-6">Correo</label>
+          <Field
+            class="form-control form-control-lg form-control-solid"
+            type="email"
+            placeholder=""
+            name="email"
+            autocomplete="off"
+          />
+          <div class="fv-plugins-message-container">
+            <div class="fv-help-block">
+              <ErrorMessage name="email" />
+            </div>
+          </div>
+        </div>
+        <!--end::Col-->
+        <div class="col-xl-4">
+          <label for="cargo" class="form-label fw-bolder text-dark fs-6"
+            >Cargo</label
+          >
+          <select class="form-select" v-model="cargo" id="cargo" name="cargo">
+            <option value="" disabled selected>Seleccionar un cargo</option>
+            <option value="operador">Operador</option>
+            <option value="cliente">Cliente</option>
+            <option value="administrador">Administrador</option>
+            <option value="jugador">Jugador</option>
+          </select>
+          <div class="fv-plugins-message-container">
+            <div class="fv-help-block">
+              <ErrorMessage name="cargo" />
+            </div>
+          </div>
+        </div>
+        <!--begin::Col-->
+        <div class="col-xl-4">
+          <label class="form-label fw-bolder text-dark fs-6">Permisos</label>
+          <Field
+            class="form-control form-control-lg form-control-solid"
+            type="tel"
+            placeholder=""
+            name="cell"
+            autocomplete="off"
+          />
+          <div class="fv-plugins-message-container">
+            <div class="fv-help-block">
+              <ErrorMessage name="cell" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end::Col-->
+      <div class="row fv-row mb-7">
+        <!--begin::Input group-->
+        <div class="mb-10 fv-row col-xl-6" data-kt-password-meter="true">
+          <!--begin::Wrapper-->
+          <div class="mb-1">
+            <!--begin::Label-->
+            <label class="form-label fw-bolder text-dark fs-6">
+              Password
+            </label>
+            <!--end::Label-->
+
+            <!--begin::Input wrapper-->
+            <div class="position-relative mb-3">
+              <Field
+                class="form-control form-control-lg form-control-solid"
+                type="password"
+                placeholder=""
+                name="password"
+                autocomplete="off"
+              />
+              <div class="fv-plugins-message-container">
+                <div class="fv-help-block">
+                  <ErrorMessage name="password" />
+                </div>
+              </div>
+            </div>
+            <!--end::Input wrapper-->
+          </div>
+          <!--end::Wrapper-->
+        </div>
+        <!--end::Input group--->
+
+        <!--begin::Input group-->
+        <div class="fv-row mb-5 col-xl-6">
+          <label class="form-label fw-bolder text-dark fs-6"
+            >Confirm Password</label
+          >
+          <Field
+            class="form-control form-control-lg form-control-solid"
+            type="password"
+            placeholder=""
+            name="cpassword"
+            autocomplete="off"
+          />
+          <div class="fv-plugins-message-container">
+            <div class="fv-help-block">
+              <ErrorMessage name="cpassword" />
+            </div>
+          </div>
+        </div>
+        <!--end::Input group-->
+      </div>
       <!--begin::Input group-->
       <div class="fv-row mb-10">
         <label class="form-check form-check-custom form-check-solid">
@@ -204,6 +236,12 @@ import { Actions } from "@/store/enums/StoreEnums";
 import Swal from "sweetalert2/dist/sweetalert2.min.js";
 
 export default defineComponent({
+  data() {
+    return {
+      cargo: "",
+    };
+  },
+
   name: "sign-up",
   components: {
     Field,
@@ -219,7 +257,16 @@ export default defineComponent({
     const registration = Yup.object().shape({
       name: Yup.string().required().label("First Name"),
       surname: Yup.string().required().label("Second Name"),
-      email: Yup.string().min(4).required().email().label("Email"),
+      email: Yup.string()
+        .email("Ingrese un correo valido.")
+        .required("Es necesario llenar esta casilla.")
+        .label("Email"),
+      cargo: Yup.string().required().label("Cargo"),
+      cell: Yup.string()
+        .min(9, "La contraseña debe tener al menos 9 caracteres.")
+        .max(9)
+        .required("Es necesario llenar esta casilla.")
+        .label("Celular"),
       password: Yup.string().min(4).required().label("Password"),
       cpassword: Yup.string()
         .min(4)
