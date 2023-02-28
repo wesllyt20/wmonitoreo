@@ -12,7 +12,7 @@
       <!--begin::Heading-->
       <div class="mb-10 text-center">
         <!--begin::Title-->
-        <h1 class="text-dark mb-3">Crear cuenta</h1>
+        <h1 id="titSigup" class="text-dark mb-3">Crear cuenta</h1>
         <!--end::Title-->
       </div>
       <!--end::Heading-->
@@ -102,13 +102,20 @@
           <label for="cargo" class="form-label fw-bolder text-dark fs-6"
             >Cargo</label
           >
-          <select class="form-select" v-model="cargo" id="cargo" name="cargo">
+          <Field
+            class="form-select"
+            v-model="cargo"
+            id="cargo"
+            name="cargo"
+            as="select"
+          >
             <option value="" disabled selected>Seleccionar un cargo</option>
-            <option value="operador">Operador</option>
-            <option value="cliente">Cliente</option>
-            <option value="administrador">Administrador</option>
-            <option value="jugador">Jugador</option>
-          </select>
+            <option value="operador">OTIDG</option>
+            <option value="cliente">REDES</option>
+            <option value="administrador">CENCIS</option>
+            <option value="jugador">CENDEHUA</option>
+            <option value="jugador">Administrador</option>
+          </Field>
           <div class="fv-plugins-message-container">
             <div class="fv-help-block">
               <ErrorMessage name="cargo" />
@@ -117,17 +124,25 @@
         </div>
         <!--begin::Col-->
         <div class="col-xl-4">
-          <label class="form-label fw-bolder text-dark fs-6">Permisos</label>
+          <label class="form-label fw-bolder text-dark fs-6"
+            >Unidad Organica</label
+          >
           <Field
-            class="form-control form-control-lg form-control-solid"
-            type="tel"
-            placeholder=""
-            name="cell"
-            autocomplete="off"
-          />
+            class="form-select"
+            v-model="tiUser"
+            id="tiUser"
+            name="tiUser"
+            as="select"
+          >
+            <option value="" disabled selected>Seleccionar un usuario</option>
+            <option value="operador">Administrador OTIDG</option>
+            <option value="cliente">Administrador REDES</option>
+            <option value="administrador">Usuario CENCIS</option>
+            <option value="jugador">Usuario</option>
+          </Field>
           <div class="fv-plugins-message-container">
             <div class="fv-help-block">
-              <ErrorMessage name="cell" />
+              <ErrorMessage name="tiUser" />
             </div>
           </div>
         </div>
@@ -140,7 +155,7 @@
           <div class="mb-1">
             <!--begin::Label-->
             <label class="form-label fw-bolder text-dark fs-6">
-              Password
+              Contraseña
             </label>
             <!--end::Label-->
 
@@ -168,7 +183,7 @@
         <!--begin::Input group-->
         <div class="fv-row mb-5 col-xl-6">
           <label class="form-label fw-bolder text-dark fs-6"
-            >Confirm Password</label
+            >Confirmar Contraseña</label
           >
           <Field
             class="form-control form-control-lg form-control-solid"
@@ -195,8 +210,8 @@
             value="1"
           />
           <span class="form-check-label fw-bold text-gray-700 fs-6">
-            I Agree &
-            <a href="#" class="ms-1 link-primary">Terms and conditions</a>.
+            Estoy de acuerdo con los
+            <a href="#" class="ms-1 link-primary">terminos y condiciones.</a>.
           </span>
         </label>
       </div>
@@ -210,9 +225,9 @@
           type="submit"
           class="btn btn-lg btn-primary"
         >
-          <span class="indicator-label"> Submit </span>
+          <span class="indicator-label"> Crear </span>
           <span class="indicator-progress">
-            Please wait...
+            Espere por favor ...
             <span
               class="spinner-border spinner-border-sm align-middle ms-2"
             ></span>
@@ -238,7 +253,8 @@ import Swal from "sweetalert2/dist/sweetalert2.min.js";
 export default defineComponent({
   data() {
     return {
-      cargo: "",
+      cargo: '',
+      tiUser:'',
     };
   },
 
@@ -253,25 +269,27 @@ export default defineComponent({
     const router = useRouter();
 
     const submitButton = ref<HTMLElement | null>(null);
-
+      const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?ñÑ¬]).{8,}$/;
     const registration = Yup.object().shape({
-      name: Yup.string().required().label("First Name"),
-      surname: Yup.string().required().label("Second Name"),
+      name: Yup.string().required("Es necesario llenar esta casilla.").label("First Name"),
+      surname: Yup.string().required("Es necesario llenar esta casilla.").label("Second Name"),
       email: Yup.string()
         .email("Ingrese un correo valido.")
         .required("Es necesario llenar esta casilla.")
         .label("Email"),
-      cargo: Yup.string().required().label("Cargo"),
+      cargo: Yup.string().required("Seleccione un cargo.").label("Cargo"),
+      tiUser: Yup.string().required("Seleccione un tipo de usuario.").label("Usuario"),
       cell: Yup.string()
         .min(9, "La contraseña debe tener al menos 9 caracteres.")
         .max(9)
         .required("Es necesario llenar esta casilla.")
         .label("Celular"),
-      password: Yup.string().min(4).required().label("Password"),
+      password: Yup.string().min(8).required("Es necesario llenar esta casilla.").label("Password")
+      .matches(strongPasswordRegex, "La contraseña debe tener al menos 8 digitos, una mayúscula, una minúscula, un número y un simbolo."),
       cpassword: Yup.string()
         .min(4)
-        .required()
-        .oneOf([Yup.ref("password"), null], "Passwords must match")
+        .required("Es necesario llenar esta casilla.")
+        .oneOf([Yup.ref("password"), null], "Las contraseñas no coinciden.")
         .label("Password Confirmation"),
     });
 
@@ -289,16 +307,16 @@ export default defineComponent({
           .dispatch(Actions.REGISTER, values)
           .then(() => {
             Swal.fire({
-              text: "All is cool! Now you submit this form",
+              text: "La cuenta ha sido creada con exito.",
               icon: "success",
               buttonsStyling: false,
-              confirmButtonText: "Ok, got it!",
+              confirmButtonText: "Continuar",
               customClass: {
                 confirmButton: "btn fw-bold btn-light-primary",
               },
             }).then(function () {
               // Go to page after successfully login
-              router.push({ name: "dashboard" });
+             router.push({ name: "dashboard" }); //<- Esto es para ingresar a travez de router ingresar al dashboard
             });
           })
           .catch(() => {
@@ -325,3 +343,9 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+#titSigup {
+  color: #0000af !important;
+  font-weight: bold;
+}
+</style>

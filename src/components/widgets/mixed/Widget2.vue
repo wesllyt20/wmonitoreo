@@ -31,7 +31,7 @@
           <div class="subwidget col px-6 py-8 me-6 mb-7">
             <span class="numberwidget2 d-block my-2"> 25 </span>
             <a href="#" class="infowidget2 fw-bold">
-              {{ translate("tracing") }}
+              {{ translate("assets") }}
             </a>
           </div>
           <div class="subwidget col px-6 py-8 me-6 mb-7">

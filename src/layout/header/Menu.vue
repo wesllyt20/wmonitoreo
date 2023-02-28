@@ -97,6 +97,11 @@ export default ({
   margin-left: 10px;
 }
 
+@media screen and (max-width: 990px) {
+  #igplog, #minam {
+    display: none;
+  }
+}
 .vr {
   height: 245px;
   margin-left: 15px;

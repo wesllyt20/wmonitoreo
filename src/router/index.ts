@@ -187,6 +187,12 @@ const routes: Array<RouteRecordRaw> = [
         name: "sign-up",
         component: () => import("@/views/auth/SignUp.vue"),
       }
+      ,
+      {
+        path: "/crafted/basicflow/list-users",
+        name: "list-users",
+        component: () => import("@/views/auth/ListUsers.vue"),
+      }
       
     ],
   },

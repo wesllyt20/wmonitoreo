@@ -30,6 +30,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/auth/SignUp.vue"),
       },
       {
+        path: "/list-users",
+        name: "list-users",
+        component: () => import("@/views/auth/ListUsers.vue"),
+      },
+      {
         path: "/password-reset",
         name: "password-reset",
         component: () => import("@/views/auth/PasswordReset.vue"),

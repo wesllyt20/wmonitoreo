@@ -4,12 +4,6 @@
     data-kt-swapper="true"
     class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0"
   >
-    <!--begin::Title-->
-    <h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">
-      {{ title }}
-    </h1>
-    <!--end::Title-->
-
     <span
       v-if="breadcrumbs"
       class="h-20px border-gray-200 border-start mx-4"

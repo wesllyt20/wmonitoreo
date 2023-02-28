@@ -100,7 +100,8 @@ const messages = {
     estates:"States",
     records:"Records",
     fileCons: "File Consolidation",
-    updateon: "Update on "
+    updateon: "Update on ",
+    assets: "Assets"
 
 
 
@@ -207,7 +208,8 @@ const messages = {
     estates:"Bienes",
     records:"Registros",
     fileCons: "Consolidado de archivos",
-    updateon: "Actualizado al "
+    updateon: "Actualizado al ",
+    assets:"Activos",
 
 
 

@@ -216,12 +216,12 @@ const DocMenuConfig = [
         fontIcon: "bi-app-indicator",
         sub: [
           {
-            heading: "signUp",
+            heading: "signIn",
             route: "/crafted/basicflow/sign-up",
           },
           {
-            heading: "settings",
-            route: "/crafted/account/settings",
+            heading: "viewUsers",
+            route: "/crafted/basicflow/list-users",
           },
         ],
       },
