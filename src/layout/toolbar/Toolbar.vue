@@ -30,7 +30,7 @@
           </a>
           <a
             type="button"
-            href="#/crafted/basicflow/sign-in"
+            href="#/crafted/basicflow/sign-up"
             class="btn btn-outline-secondary"
             :class="{ active: activeTab === 'registros' }"
             @click="setActiveTab('registros')"

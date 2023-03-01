@@ -100,7 +100,7 @@
         <!--end::Col-->
         <div class="col-xl-4">
           <label for="cargo" class="form-label fw-bolder text-dark fs-6"
-            >Cargo</label
+            >Unidad organica</label
           >
           <Field
             class="form-select"
@@ -110,11 +110,11 @@
             as="select"
           >
             <option value="" disabled selected>Seleccionar un cargo</option>
-            <option value="operador">OTIDG</option>
-            <option value="cliente">REDES</option>
-            <option value="administrador">CENCIS</option>
-            <option value="jugador">CENDEHUA</option>
-            <option value="jugador">Administrador</option>
+            <option value="otidg">OTIDG</option>
+            <option value="redes">REDES</option>
+            <option value="cencis">CENCIS</option>
+            <option value="cendehua">CENDEHUA</option>
+            <option value="oad">O. Administración</option>
           </Field>
           <div class="fv-plugins-message-container">
             <div class="fv-help-block">
@@ -125,7 +125,7 @@
         <!--begin::Col-->
         <div class="col-xl-4">
           <label class="form-label fw-bolder text-dark fs-6"
-            >Unidad Organica</label
+            >Tipo de usuario</label
           >
           <Field
             class="form-select"
@@ -135,10 +135,10 @@
             as="select"
           >
             <option value="" disabled selected>Seleccionar un usuario</option>
-            <option value="operador">Administrador OTIDG</option>
-            <option value="cliente">Administrador REDES</option>
-            <option value="administrador">Usuario CENCIS</option>
-            <option value="jugador">Usuario</option>
+            <option value="admOti">Administrador OTIDG</option>
+            <option value="admRed">Administrador REDES</option>
+            <option value="usCen">Usuario CENCIS</option>
+            <option value="user">Usuario</option>
           </Field>
           <div class="fv-plugins-message-container">
             <div class="fv-help-block">
@@ -200,32 +200,15 @@
         </div>
         <!--end::Input group-->
       </div>
-      <!--begin::Input group-->
-      <div class="fv-row mb-10">
-        <label class="form-check form-check-custom form-check-solid">
-          <Field
-            class="form-check-input"
-            type="checkbox"
-            name="toc"
-            value="1"
-          />
-          <span class="form-check-label fw-bold text-gray-700 fs-6">
-            Estoy de acuerdo con los
-            <a href="#" class="ms-1 link-primary">terminos y condiciones.</a>.
-          </span>
-        </label>
-      </div>
-      <!--end::Input group-->
-
       <!--begin::Actions-->
       <div class="text-center">
         <button
           id="kt_sign_up_submit"
           ref="submitButton"
           type="submit"
-          class="btn btn-lg btn-primary"
+          class="btn btn-lg btn-primary mt-n13"
         >
-          <span class="indicator-label"> Crear </span>
+          <span class="indicator-label"> Crear cuenta</span>
           <span class="indicator-progress">
             Espere por favor ...
             <span
@@ -316,7 +299,7 @@ export default defineComponent({
               },
             }).then(function () {
               // Go to page after successfully login
-             router.push({ name: "dashboard" }); //<- Esto es para ingresar a travez de router ingresar al dashboard
+             router.push({ name: "list-users" }); //<- Esto es para ingresar a travez de router ingresar al dashboard
             });
           })
           .catch(() => {
