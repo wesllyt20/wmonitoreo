@@ -106,7 +106,7 @@
                 </td>
                 <td class="text-center">
                   <a
-                    href="#"
+                  href="#/crafted/basicflow/update-user"
                     class="btnw9 btn btn-icon btn-bg-light btn-sm me-1"
                   >
                     <span class="svg-icon svg-icon-3">
